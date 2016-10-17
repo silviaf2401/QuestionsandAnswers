@@ -1,0 +1,10 @@
+  <form name ="myform">
+    <label>Please enter your name: </label>
+    <input type='text' name='user_input' ng-model='name' ng-minlength='3' required></input>
+    <div>
+     <span style="color:red" ng-show="myform.user_input.$error.minlength"> Username must be 3+ characters long</span>
+	</div>
+    <button ng-disabled="myform.$invalid" ng-click='createUser(name)'>LOGIN</button>
+  </form>
+
+

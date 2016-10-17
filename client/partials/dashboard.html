@@ -1,0 +1,24 @@
+<h1> This is my dashboard </h1>
+<div>
+<a href="#/new_question">Add a question</a> | <a href="#/dashboard">Home</a> | <a href="#/"  ng-click="logout()">Log Out</a>
+</div>
+  <input type="text" placeholder="Search Questions"  ng-model="filter_name">
+
+
+<table>
+    <tr>
+      <td>Questions</td>
+      <td>Answers (count)</td>
+      <td>Action</td>
+    </tr>
+    <tr ng-repeat="quest in all_questions | filter: filter_name">
+		<td>{{quest.question}}</td>
+		<td>{{quest.answers.length}}</td>
+		<td>
+			<a href="#/question/{{quest._id}}">Show</a>
+			<a href="#/question/{{quest._id}}/newanswer">Answer</a>
+		</td>
+    </tr>
+</table>
+
+</div>

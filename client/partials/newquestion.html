@@ -1,0 +1,15 @@
+<div>
+  <a href="#/dashboard">HOME</a> | <a href="#/" ng-click="logout()">Log Out</a> 
+</div>
+  <h4>New question</h4>
+    <form name="myform">
+      <div><label>Question</label><textarea ng-model="quest.question" name="question" ng-minlength='10' required></textarea></div>
+      <div>
+     	<span style="color:red" ng-show="myform.question.$error.minlength"> Question must be 10+ characters long</span>
+	  </div>
+      <div><label>Description (optional)</label><textarea ng-model="quest.description" name="description"></textarea></div>
+      <button ng-disabled="myform.$invalid" ng-click="addQuestion(quest)">Submit</button>
+      <a href="#/dashboard">Go back</a>
+    </form>
+
+
